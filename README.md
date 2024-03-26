@@ -1,2 +1,2 @@
 # Searchable-encryption-Seren
-implementation of seren
+Implementation of the first non-interactive publicly verifiable DSSE scheme with support for forward privacy and Type-II backward privacy, named Seren. The code is coming...
