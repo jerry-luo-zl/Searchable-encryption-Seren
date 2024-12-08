@@ -5,13 +5,19 @@ project(Seren)
 set(CMAKE_CXX_STANDARD 17)
 
 FIND_PACKAGE(OpenSSL REQUIRED)
-set(Boost_REQUIRED_VERSION "1.84.0")
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/)
+# set thirft, rocksdb include path
+set(GLOBAL_DIR /usr/local/include/ /opt/homebrew/include)
+set(THRIFT_INCLUDE_DIR /opt/homebrew/opt/thrift@0.13/include)
+set(ROCKSDB_INCLUDE_DIR /opt/homebrew/opt/rocksdb/include)
+include_directories(${GLOBAL_DIR} ${ROCKSDB_INCLUDE_DIR} ${THRIFT_INCLUDE_DIR})
 
-# build Thrift dependencies
+# set thirft, rocksdb lib path
+set(THRIFT_LIB_DIR /opt/homebrew/opt/thrift@0.13/lib)
+set(ROCKSDB_LIB_DIR /opt/homebrew/opt/rocksdb/lib)
+link_directories(${THRIFT_LIB_DIR} ${ROCKSDB_LIB_DIR})
+
 set(THRIFT_FILE ${CMAKE_CURRENT_SOURCE_DIR}/Thrift/Server.thrift)
-link_directories(${CMAKE_CURRENT_SOURCE_DIR}/lib)
 
 exec_program("thrift --gen cpp -o ${CMAKE_CURRENT_SOURCE_DIR} ${THRIFT_FILE}")
 

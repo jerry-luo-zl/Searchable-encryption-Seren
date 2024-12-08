@@ -15,6 +15,8 @@ This repository contains the implementation of Seren, a publicly-verifiable non-
 
 ## Building
 
+Before you build this project, make sure you have installed the required dependencies, and **alert include path and lib path of thrift and rocksdb in CMakeLists.txt correctly.**
+
 ```bash
 git clone https://github.com/MonashCybersecurityLab/Aura.git
 cd Seren
