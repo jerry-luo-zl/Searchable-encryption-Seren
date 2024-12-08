@@ -9,14 +9,18 @@ This repository contains the implementation of Seren, a publicly-verifiable non-
 * clang++15.0.0
 * cmake 3.17
 * openssl 1.1.1
+* Boost 1.84.0
 * Apache Thrift 0.13.0
 * RocksDB 8.10.0
 
 ## Building
 
+Before you build this project, make sure you have installed the required dependencies, and **alert include path and lib path of thrift and rocksdb in CMakeLists.txt correctly.**
+
 ```bash
-git clone https://github.com/jerry-luo-zl/Searchable-encryption-Seren.gitAura.git
+git clone https://github.com/MonashCybersecurityLab/Aura.git
 cd Seren
+tar -xvf ./include/boost.tar.gz
 mkdir build
 cd build
 # use cmake/make to build the code
