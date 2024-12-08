@@ -9,6 +9,7 @@ This repository contains the implementation of Seren, a publicly-verifiable non-
 * clang++15.0.0
 * cmake 3.17
 * openssl 1.1.1
+* Boost 1.84.0
 * Apache Thrift 0.13.0
 * RocksDB 8.10.0
 
@@ -17,6 +18,7 @@ This repository contains the implementation of Seren, a publicly-verifiable non-
 ```bash
 git clone https://github.com/MonashCybersecurityLab/Aura.git
 cd Seren
+tar -xvf ./include/boost.tar.gz
 mkdir build
 cd build
 # use cmake/make to build the code
